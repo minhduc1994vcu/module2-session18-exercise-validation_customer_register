@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<h3>Delete Account form list</h3>
+<p>
+    <a th:href="@{/}">Back to user list</a>
+</p>
+<div id="form">
+    <form th:action="@{/user/delete}" th:object="${user}" method="post" novalidate="novalidate">
+        <table>
+            <input type="hidden" th:field="*{id}"/>
+            <tr>
+                <td>FirstName: </td>
+                <td th:text="*{firstName}"></td>
+            </tr>
+            <tr>
+                <td>LastName: </td>
+                <td th:text="*{lastName}"></td>
+            </tr>
+            <tr>
+                <td>PhoneNumber: </td>
+                <td th:text="*{phoneNumber}"></td>
+            </tr>
+            <tr>
+                <td>Age: </td>
+                <td th:text="*{age}"></td>
+            </tr>
+            <tr>
+                <td>Email: </td>
+                <td th:text="*{email}"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Delete"/></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<footer th:replace="layout :: footer"></footer>
+</body>
+</html>

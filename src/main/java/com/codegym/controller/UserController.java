@@ -78,4 +78,10 @@ public class UserController {
         return "redirect:/";
     }
 
+    @GetMapping("/user/{id}/view")
+    public String view(@PathVariable int id, Model model) {
+        model.addAttribute("user", this.userService.findById(id));
+        return "view";
+    }
+
 }

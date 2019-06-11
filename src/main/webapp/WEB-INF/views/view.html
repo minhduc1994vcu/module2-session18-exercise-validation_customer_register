@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<h3>Show detail information user</h3>
+<p>
+    <a th:href="@{/}">Back to user list</a>
+</p>
+<div id="form">
+    <table>
+        <tr>
+            <td>Id: </td>
+            <td th:text="${user.id}"></td>
+        </tr>
+        <tr>
+            <td>FirstName: </td>
+            <td th:text="${user.firstName}"></td>
+        </tr>
+        <tr>
+            <td>LastName: </td>
+            <td th:text="${user.lastName}"></td>
+        </tr>
+        <tr>
+            <td>PhoneNumber: </td>
+            <td th:text="${user.phoneNumber}"></td>
+        </tr>
+        <tr>
+            <td>Age: </td>
+            <td th:text="${user.age}"></td>
+        </tr>
+        <tr>
+            <td>Email: </td>
+            <td th:text="${user.email}"></td>
+        </tr>
+    </table>
+</div>
+<footer th:replace="layout :: footer"></footer>
+</body>
+</html>

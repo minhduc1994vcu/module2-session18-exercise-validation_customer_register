@@ -31,11 +31,9 @@ public class UserController {
     }
 
     @PostMapping("/user/create")
-    public String save(@Valid @ModelAttribute("user") User user,Model model, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    public String save(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         new User().validate(user, bindingResult);
         if (bindingResult.hasFieldErrors()) {
-            model.addAttribute("user", new User());
-
             return "create";
         } else {
             int id = this.userService.findAll().size() + 1;
